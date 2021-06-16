@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:settings_ui/constants/constants.dart';
+import 'package:settings_ui/data/data.dart';
 import 'package:settings_ui/widgets/custom_icon_button.dart';
 import 'package:settings_ui/widgets/shoe_card.dart';
 
@@ -96,12 +97,31 @@ class _HomeScreenState extends State<HomeScreen> {
                       .toList(),
                 ),
                 SizedBox(height: 25),
-                shoeCard()
+                _shoeListView()
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  Widget _shoeListView() {
+    return ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: shoesData.length,
+        itemBuilder: (context, index) {
+          return Column(
+            children: [
+              shoeCard(
+                shoesData[index],
+              ),
+              SizedBox(
+                height: 10,
+              )
+            ],
+          );
+        });
   }
 }
