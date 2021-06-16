@@ -1,4 +1,4 @@
-# settings_ui
+# Nike Collection
 
 A new Flutter project.
 
