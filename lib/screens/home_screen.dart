@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:settings_ui/constants/constants.dart';
 import 'package:settings_ui/data/data.dart';
+import 'package:settings_ui/screens/detail_screen.dart';
 import 'package:settings_ui/widgets/custom_icon_button.dart';
 import 'package:settings_ui/widgets/shoe_card.dart';
 
@@ -114,8 +115,50 @@ class _HomeScreenState extends State<HomeScreen> {
         itemBuilder: (context, index) {
           return Column(
             children: [
-              shoeCard(
-                shoesData[index],
+              GestureDetector(
+                onTap: () {
+                  // Navigator.of(context).push(
+                  //   PageRouteBuilder(
+                  //     transitionDuration: Duration(milliseconds: 500),
+                  //     pageBuilder: (BuildContext context,
+                  //         Animation<double> animation,
+                  //         Animation<double> secondaryAnimation) {
+                  //       return DetailScreen(
+                  //         shoeData: shoesData[index],
+                  //       );
+                  //     },
+                  //     transitionsBuilder: (BuildContext context,
+                  //         Animation<double> animation,
+                  //         Animation<double> secondaryAnimation,
+                  //         Widget child) {
+                  //       return Align(
+                  //         // child: FadeTransition(
+
+                  //         //   opacity: animation,
+                  //         //   child: child,
+                  //         // ),
+                  //         child: ScaleTransition(
+                  //           scale: animation,
+                  //           alignment: Alignment.topLeft,
+                  //           child: child,
+                  //         ),
+                  //       );
+                  //     },
+                  //   ),
+                  // );
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => DetailScreen(
+                                shoeData: shoesData[index],
+                              )));
+                },
+                // child: shoeCard(
+                //   shoesData[index],
+                // ),
+                child: Hero(
+                    tag: "shoe" + shoesData[index].name,
+                    child: Image.asset(shoesData[index].image)),
               ),
               SizedBox(
                 height: 10,

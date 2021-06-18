@@ -34,5 +34,11 @@ List<ShoeData> shoesData = [
       name: "Nike Air Light",
       image: "assets/images/1.png",
       price: "380.0",
-      backgroundColor: Color(0xfff7cfcf)),
+      backgroundColor: Color(0xffffeae9)),
+  ShoeData(
+      description: "Your workhorse with wing returns",
+      name: "Nike Air Light",
+      image: "assets/images/3.png",
+      price: "380.0",
+      backgroundColor: Color(0xffe9eff2)),
 ];

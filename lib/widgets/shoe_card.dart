@@ -23,8 +23,11 @@ Widget shoeCard(ShoeData shoe) {
                 child: Container(
                   height: 120,
                   width: 140,
-                  child: Image.asset(
-                    shoe.image,
+                  child: Hero(
+                    tag: "shoe" + shoe.name,
+                    child: Image.asset(
+                      shoe.image,
+                    ),
                   ),
                 ),
               ),
