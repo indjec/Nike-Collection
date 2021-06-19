@@ -2,7 +2,7 @@
 # Flutter Shop UI
 
 ## Preview
-![Preview](gif/app.gif)
+<img src="gif/app.gif" width="300" height="600" />
 
 
 
