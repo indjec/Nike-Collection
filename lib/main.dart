@@ -24,6 +24,25 @@ class MyApp extends StatelessWidget {
             fontSize: 18,
             color: Colors.grey,
           ),
+          headline4: TextStyle(
+            fontFamily: 'Poppins',
+            fontSize: 18,
+            color: Colors.black,
+          ),
+          headline5: TextStyle(
+            fontFamily: 'Poppins',
+            fontWeight: FontWeight.w300,
+            fontSize: 15,
+          ),
+          caption: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.grey,
+            fontSize: 13,
+          ),
+          button: TextStyle(
+            fontFamily: 'Poppins',
+            color: Colors.white,
+          ),
         ),
       ),
       home: HomeScreen(),

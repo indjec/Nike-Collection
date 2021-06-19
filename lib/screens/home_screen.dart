@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: Theme.of(context).textTheme.headline1,
                 ),
                 Text(
-                  "The Best of Bike, all in one place.",
+                  "The Best of Nike, all in one place.",
                   style: Theme.of(context).textTheme.headline2,
                 ),
                 SizedBox(height: 25),
@@ -83,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       backgroundColor: AppColor.SECONDARY_COLOR,
                       child: Image.asset('assets/icons/filter.png'),
                       onTap: () {},
+                      radius: BorderRadius.circular(12),
                     )
                   ],
                 ),
@@ -117,48 +118,18 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               GestureDetector(
                 onTap: () {
-                  // Navigator.of(context).push(
-                  //   PageRouteBuilder(
-                  //     transitionDuration: Duration(milliseconds: 500),
-                  //     pageBuilder: (BuildContext context,
-                  //         Animation<double> animation,
-                  //         Animation<double> secondaryAnimation) {
-                  //       return DetailScreen(
-                  //         shoeData: shoesData[index],
-                  //       );
-                  //     },
-                  //     transitionsBuilder: (BuildContext context,
-                  //         Animation<double> animation,
-                  //         Animation<double> secondaryAnimation,
-                  //         Widget child) {
-                  //       return Align(
-                  //         // child: FadeTransition(
-
-                  //         //   opacity: animation,
-                  //         //   child: child,
-                  //         // ),
-                  //         child: ScaleTransition(
-                  //           scale: animation,
-                  //           alignment: Alignment.topLeft,
-                  //           child: child,
-                  //         ),
-                  //       );
-                  //     },
-                  //   ),
-                  // );
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => DetailScreen(
-                                shoeData: shoesData[index],
-                              )));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DetailScreen(
+                        shoeData: shoesData[index],
+                      ),
+                    ),
+                  );
                 },
-                // child: shoeCard(
-                //   shoesData[index],
-                // ),
-                child: Hero(
-                    tag: "shoe" + shoesData[index].name,
-                    child: Image.asset(shoesData[index].image)),
+                child: ShoeCard(
+                  shoe: shoesData[index],
+                ),
               ),
               SizedBox(
                 height: 10,
